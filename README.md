@@ -56,57 +56,109 @@ result = os.system("make");
 
 The problem here is that the program does not specify an absolute path for make and fails to clean its environment prior to executing the call to os.system(). If an attacker can modify the $PATH variable to point to a malicious binary called make and cause the program to be executed in their environment, then the malicious binary will be loaded instead of the one intended. Because of the nature of the application, it runs with the privileges necessary to perform system operations, which means the attacker's make will now be run with these privileges, possibly giving the attacker complete control of the system.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [5] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [6] Standards Mapping - FIPS200 
+
 [7] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [8] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [9] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [12] Standards Mapping - OWASP Top 10 2004 
+
 [13] Standards Mapping - OWASP Top 10 2007 
+
 [14] Standards Mapping - OWASP Top 10 2010 
+
 [15] Standards Mapping - OWASP Top 10 2013 
+
 [16] Standards Mapping - OWASP Top 10 2017 
+
 [17] Standards Mapping - OWASP Top 10 2021 
+
 [18] Standards Mapping - OWASP Mobile 2014 
+
 [19] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [27] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [29] Standards Mapping - SANS Top 25 2009 
+
 [30] Standards Mapping - SANS Top 25 2010 
+
 [31] Standards Mapping - SANS Top 25 2011 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [51] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [52] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -147,52 +199,99 @@ In this example, the programmer has not considered that an attacker could provid
 
 This will cause "@aMongoDBInstance.com/?ssl=true" to be treated as an additional invalid argument, effectively ignoring "ssl=true" and connecting to the database with no encryption.
 References
+
 [1] Chema Alonso, Manuel Fernandez, Alejandro Martin and Antonio Guzmán Connection String Parameter Pollution Attacks
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [4] Standards Mapping - FIPS200 
+
 [5] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [6] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [8] Standards Mapping - OWASP Top 10 2004 
+
 [9] Standards Mapping - OWASP Top 10 2007 
+
 [10] Standards Mapping - OWASP Top 10 2010 
+
 [11] Standards Mapping - OWASP Top 10 2013 
+
 [12] Standards Mapping - OWASP Top 10 2017 
+
 [13] Standards Mapping - OWASP Top 10 2021 
+
 [14] Standards Mapping - OWASP Mobile 2014 
+
 [15] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [23] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [25] Standards Mapping - SANS Top 25 2009 
+
 [26] Standards Mapping - SANS Top 25 2010 
+
 [27] Standards Mapping - SANS Top 25 2011 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -254,60 +353,115 @@ Connection: Closed
 
 Even though, the response clearly states that it should be treated as a JSON document, an old browser may still try to render it as an HTML document, making it vulnerable to a Cross-Site Scripting attack.
 References
+
 [1] X-Content-Type-Options Mozilla
+
 [2] MIME Type Detection in Windows Internet Explorer Microsoft
+
 [3] Understanding Malicious Content Mitigation for Web Developers CERT
+
 [4] HTML 4.01 Specification W3
+
 [5] Tongbo Luo, Hao Hao, Wenliang Du, Yifei Wang, and Heng Yin Attacks on WebView in the Android System
+
 [6] Erika Chin and David Wagner Bifocals: Analyzing WebView Vulnerabilities in Android Applications
+
 [7] INJECT-3: XML and HTML generation requires care Oracle
+
 [8] Standards Mapping - Common Weakness Enumeration 
+
 [9] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [10] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [11] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [12] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [13] Standards Mapping - FIPS200 
+
 [14] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [15] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [16] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [17] Standards Mapping - OWASP Top 10 2004 
+
 [18] Standards Mapping - OWASP Top 10 2007 
+
 [19] Standards Mapping - OWASP Top 10 2010 
+
 [20] Standards Mapping - OWASP Top 10 2013 
+
 [21] Standards Mapping - OWASP Top 10 2017 
+
 [22] Standards Mapping - OWASP Top 10 2021 
+
 [23] Standards Mapping - OWASP Mobile 2014 
+
 [24] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [28] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [29] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [30] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [31] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [32] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [33] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [34] Standards Mapping - SANS Top 25 2009 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [51] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [52] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [53] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [54] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [55] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -371,58 +525,111 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 - A source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.
 References
+
 [1] Understanding Malicious Content Mitigation for Web Developers CERT
+
 [2] HTML 4.01 Specification W3
+
 [3] Anti-Cross Site Scripting Library MSDN
+
 [4] Standards Mapping - Common Weakness Enumeration 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [7] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [8] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [9] Standards Mapping - FIPS200 
+
 [10] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [12] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [13] Standards Mapping - OWASP Top 10 2004 
+
 [14] Standards Mapping - OWASP Top 10 2007 
+
 [15] Standards Mapping - OWASP Top 10 2010 
+
 [16] Standards Mapping - OWASP Top 10 2013 
+
 [17] Standards Mapping - OWASP Top 10 2017 
+
 [18] Standards Mapping - OWASP Top 10 2021 
+
 [19] Standards Mapping - OWASP Mobile 2014 
+
 [20] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [29] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [30] Standards Mapping - SANS Top 25 2009 
+
 [31] Standards Mapping - SANS Top 25 2010 
+
 [32] Standards Mapping - SANS Top 25 2011 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [51] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [52] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [53] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -504,57 +711,109 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 - A source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.
 References
+
 [1] Understanding Malicious Content Mitigation for Web Developers CERT
+
 [2] HTML 4.01 Specification W3
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [7] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [8] Standards Mapping - FIPS200 
+
 [9] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [12] Standards Mapping - OWASP Top 10 2004 
+
 [13] Standards Mapping - OWASP Top 10 2007 
+
 [14] Standards Mapping - OWASP Top 10 2010 
+
 [15] Standards Mapping - OWASP Top 10 2013 
+
 [16] Standards Mapping - OWASP Top 10 2017 
+
 [17] Standards Mapping - OWASP Top 10 2021 
+
 [18] Standards Mapping - OWASP Mobile 2014 
+
 [19] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [27] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [29] Standards Mapping - SANS Top 25 2009 
+
 [30] Standards Mapping - SANS Top 25 2010 
+
 [31] Standards Mapping - SANS Top 25 2011 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [51] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [52] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 ## Cross-Site Scripting: Poor Validation
@@ -624,55 +883,105 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 - A source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.
 References
+
 [1] Understanding Malicious Content Mitigation for Web Developers CERT
+
 [2] HTML 4.01 Specification W3
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [7] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [8] Standards Mapping - FIPS200 
+
 [9] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [12] Standards Mapping - OWASP Top 10 2004 
+
 [13] Standards Mapping - OWASP Top 10 2007 
+
 [14] Standards Mapping - OWASP Top 10 2010 
+
 [15] Standards Mapping - OWASP Top 10 2013 
+
 [16] Standards Mapping - OWASP Top 10 2017 
+
 [17] Standards Mapping - OWASP Top 10 2021 
+
 [18] Standards Mapping - OWASP Mobile 2014 
+
 [19] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [27] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [29] Standards Mapping - SANS Top 25 2009 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [49] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [50] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -745,57 +1054,109 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 - A source outside the application stores dangerous data in a database or other data store, and the dangerous data is subsequently read back into the application as trusted data and included in dynamic content.
 References
+
 [1] Understanding Malicious Content Mitigation for Web Developers CERT
+
 [2] HTML 4.01 Specification W3
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [7] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [8] Standards Mapping - FIPS200 
+
 [9] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [12] Standards Mapping - OWASP Top 10 2004 
+
 [13] Standards Mapping - OWASP Top 10 2007 
+
 [14] Standards Mapping - OWASP Top 10 2010 
+
 [15] Standards Mapping - OWASP Top 10 2013 
+
 [16] Standards Mapping - OWASP Top 10 2017 
+
 [17] Standards Mapping - OWASP Top 10 2021 
+
 [18] Standards Mapping - OWASP Mobile 2014 
+
 [19] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [27] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [29] Standards Mapping - SANS Top 25 2009 
+
 [30] Standards Mapping - SANS Top 25 2010 
+
 [31] Standards Mapping - SANS Top 25 2011 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [51] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [52] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -827,39 +1188,73 @@ Example:
 
 There are no known regular expression implementations which are immune to this vulnerability. All platforms and languages are vulnerable to this attack.
 References
+
 [1] Bryan Sullivan Regular Expression Denial of Service Attacks and Defenses
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [4] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [5] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [6] Standards Mapping - OWASP Top 10 2004 
+
 [7] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [8] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [9] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [10] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [11] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [12] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [13] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [14] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [15] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [16] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [17] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [18] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [19] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [20] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [21] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [22] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [23] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [24] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [33] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [34] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -898,53 +1293,101 @@ result = eval(userOps)
 
 The program behaves correctly when the operation parameter is a benign value, such as "8 + 7 * 2", in which case the result variable is assigned a value of 22. However, if an attacker specifies operations that are both valid and malicious, those operations would be executed with the full privilege of the parent process. Such attacks are even more dangerous when the underlying language provides access to system resources or allows execution of system commands. For example, if an attacker were to specify " os.system('shutdown -h now')" as the value of operation, a shutdown command would be executed on the host system.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [4] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [5] Standards Mapping - FIPS200 
+
 [6] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [26] Standards Mapping - SANS Top 25 2009 
+
 [27] Standards Mapping - SANS Top 25 2010 
+
 [28] Standards Mapping - SANS Top 25 2011 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [48] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -968,55 +1411,105 @@ The pickle module is not intended to be secure against erroneous or maliciously 
 
 Pickle is a powerful serializing library that provides developers with an easy way to transmit objects, serializing them to a custom Pickle representation. Pickle allows arbitrary objects to declare how they should be deserialized by defining a __reduce__ method. This method should return a callable and the arguments for it. Pickle will call the callable with the provided arguments to construct the new object allowing the attacker to execute arbitrary commands.
 References
+
 [1] Python object serialization Python
+
 [2] Python object serialization Python
+
 [3] Python Library Reference Python
+
 [4] Standards Mapping - Common Weakness Enumeration 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [7] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [8] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [9] Standards Mapping - FIPS200 
+
 [10] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [12] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [13] Standards Mapping - OWASP Top 10 2004 
+
 [14] Standards Mapping - OWASP Top 10 2007 
+
 [15] Standards Mapping - OWASP Top 10 2010 
+
 [16] Standards Mapping - OWASP Top 10 2013 
+
 [17] Standards Mapping - OWASP Top 10 2017 
+
 [18] Standards Mapping - OWASP Top 10 2021 
+
 [19] Standards Mapping - OWASP Mobile 2014 
+
 [20] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [29] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [30] Standards Mapping - SANS Top 25 2009 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [50] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1044,52 +1537,99 @@ import yaml
 yamlString = getYamlFromUser()
 yaml.load(yamlString)
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [5] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [6] Standards Mapping - FIPS200 
+
 [7] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [10] Standards Mapping - OWASP Top 10 2004 
+
 [11] Standards Mapping - OWASP Top 10 2007 
+
 [12] Standards Mapping - OWASP Top 10 2010 
+
 [13] Standards Mapping - OWASP Top 10 2013 
+
 [14] Standards Mapping - OWASP Top 10 2017 
+
 [15] Standards Mapping - OWASP Top 10 2021 
+
 [16] Standards Mapping - OWASP Mobile 2014 
+
 [17] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - SANS Top 25 2009 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1176,50 +1716,95 @@ Cookie Manipulation: When combined with attacks like Cross-Site Request Forgery,
 
 Open Redirect: Allowing unvalidated input to control the URL used in a redirect can aid phishing attacks.
 References
+
 [1] A. Klein Divide and Conquer: HTTP Response Splitting, Web Cache Poisoning Attacks, and Related Topics
+
 [2] D. Crab HTTP Response Splitting
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [5] Standards Mapping - FIPS200 
+
 [6] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [23] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [44] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [45] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1300,50 +1885,95 @@ Cookie Manipulation: When combined with attacks like Cross-Site Request Forgery,
 
 Open Redirect: Allowing unvalidated input to control the URL used in a redirect can aid phishing attacks.
 References
+
 [1] A. Klein Divide and Conquer: HTTP Response Splitting, Web Cache Poisoning Attacks, and Related Topics
+
 [2] D. Crab HTTP Response Splitting
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [5] Standards Mapping - FIPS200 
+
 [6] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [23] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [44] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [45] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 ## Header Manipulation: SMTP
@@ -1403,49 +2033,93 @@ cc: victim1@mail.com,victim2@mail.com
 
 This will effectively allow an attacker to craft spam messages or to send anonymous emails amongst other attacks.
 References
+
 [1] OWASP Testing for IMAP/SMTP Injection (OTG-INPVAL-011)
+
 [2] Vicente Aguilera Díaz MX Injection: Capturing and Exploiting Hidden Mail Servers
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [5] Standards Mapping - FIPS200 
+
 [6] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [23] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [44] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1466,54 +2140,103 @@ X-XSS-Protection refers to a header that is automatically enabled in Internet Ex
 
 The header can be set in multiple locations and should be checked for both misconfiguration as well as malicious tampering.
 References
+
 [1] IE8 Security Part IV: The XSS Filter
+
 [2] OWASP OWASP Secure Headers Project
+
 [3] django-secure
+
 [4] SECURE_BROWSER_XSS_FILTER
+
 [5] Standards Mapping - Common Weakness Enumeration 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [7] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [8] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [9] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [10] Standards Mapping - FIPS200 
+
 [11] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [12] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [13] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [14] Standards Mapping - OWASP Top 10 2004 
+
 [15] Standards Mapping - OWASP Top 10 2010 
+
 [16] Standards Mapping - OWASP Top 10 2013 
+
 [17] Standards Mapping - OWASP Top 10 2017 
+
 [18] Standards Mapping - OWASP Top 10 2021 
+
 [19] Standards Mapping - OWASP Mobile 2014 
+
 [20] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [29] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [49] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1581,47 +2304,89 @@ Here the untrusted data in name will not be validated to escape JSON-related spe
 
 The JSON file is now tampered with malicious data and the user has a privileged access of "admin" instead of "user"
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - FIPS200 
+
 [4] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [5] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [6] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [7] Standards Mapping - OWASP Top 10 2004 
+
 [8] Standards Mapping - OWASP Top 10 2007 
+
 [9] Standards Mapping - OWASP Top 10 2010 
+
 [10] Standards Mapping - OWASP Top 10 2013 
+
 [11] Standards Mapping - OWASP Top 10 2017 
+
 [12] Standards Mapping - OWASP Top 10 2021 
+
 [13] Standards Mapping - OWASP Mobile 2014 
+
 [14] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [15] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [21] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [22] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [23] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [24] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [42] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1686,52 +2451,99 @@ However, if an attacker is able to create a username "admin+logout:+1+++++++++++
 
 Attempt to log out: name: admin logout: 1                       logout: twenty-one
 References
+
 [1] A. Muffet The night the log was forged.
+
 [2] G. Hoglund, G. McGraw Exploiting Software Addison-Wesley
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [5] Standards Mapping - FIPS200 
+
 [6] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [7] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [8] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [11] Standards Mapping - OWASP Top 10 2004 
+
 [12] Standards Mapping - OWASP Top 10 2007 
+
 [13] Standards Mapping - OWASP Top 10 2010 
+
 [14] Standards Mapping - OWASP Top 10 2013 
+
 [15] Standards Mapping - OWASP Top 10 2017 
+
 [16] Standards Mapping - OWASP Top 10 2021 
+
 [17] Standards Mapping - OWASP Mobile 2014 
+
 [18] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [27] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1791,52 +2603,99 @@ INFO: User logged out=badguy
 
 Clearly, attackers may use this same mechanism to insert arbitrary log entries.
 References
+
 [1] A. Muffet The night the log was forged.
+
 [2] G. Hoglund, G. McGraw Exploiting Software Addison-Wesley
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [5] Standards Mapping - FIPS200 
+
 [6] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [7] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [8] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [11] Standards Mapping - OWASP Top 10 2004 
+
 [12] Standards Mapping - OWASP Top 10 2007 
+
 [13] Standards Mapping - OWASP Top 10 2010 
+
 [14] Standards Mapping - OWASP Top 10 2013 
+
 [15] Standards Mapping - OWASP Top 10 2017 
+
 [16] Standards Mapping - OWASP Top 10 2021 
+
 [17] Standards Mapping - OWASP Mobile 2014 
+
 [18] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [27] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1872,53 +2731,101 @@ session.login(username, password)
 session.docmd("VRFY", user)
 ...
 References
+
 [1] OWASP Testing for IMAP/SMTP Injection (OTG-INPVAL-011)
+
 [2] Vicente Aguilera Díaz MX Injection: Capturing and Exploiting Hidden Mail Servers
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [5] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [6] Standards Mapping - FIPS200 
+
 [7] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [10] Standards Mapping - OWASP Top 10 2004 
+
 [11] Standards Mapping - OWASP Top 10 2007 
+
 [12] Standards Mapping - OWASP Top 10 2010 
+
 [13] Standards Mapping - OWASP Top 10 2013 
+
 [14] Standards Mapping - OWASP Top 10 2017 
+
 [15] Standards Mapping - OWASP Top 10 2021 
+
 [16] Standards Mapping - OWASP Mobile 2014 
+
 [17] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - SANS Top 25 2010 
+
 [28] Standards Mapping - SANS Top 25 2011 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [48] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -1977,51 +2884,97 @@ set req-1233 0 0 n
 
 The preceding key will successfully add a new key/value pair in the cache injected=0123456789. Depending on the payload, attackers will be able to poison the cache or execute arbitrary code by injecting a Pickle-serialized payload that will execute arbitrary code upon deserialization.
 References
+
 [1] Novikov The New Page Of Injections Book: Memcached Injections
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [6] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [7] Standards Mapping - FIPS200 
+
 [8] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [11] Standards Mapping - OWASP Top 10 2004 
+
 [12] Standards Mapping - OWASP Top 10 2007 
+
 [13] Standards Mapping - OWASP Top 10 2010 
+
 [14] Standards Mapping - OWASP Top 10 2013 
+
 [15] Standards Mapping - OWASP Top 10 2017 
+
 [16] Standards Mapping - OWASP Top 10 2021 
+
 [17] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [46] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2071,58 +3024,111 @@ However, because the query is constructed dynamically by concatenating a constan
 
 The addition of the || "4" != "5" condition causes the where clause to always evaluate to true, so the query returns all entries stored in the emails collection, regardless of the email owner.
 References
+
 [1] Testing for NoSQL injection OWASP
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [6] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [7] Standards Mapping - FIPS200 
+
 [8] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [9] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [10] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [12] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [13] Standards Mapping - OWASP Top 10 2004 
+
 [14] Standards Mapping - OWASP Top 10 2007 
+
 [15] Standards Mapping - OWASP Top 10 2010 
+
 [16] Standards Mapping - OWASP Top 10 2013 
+
 [17] Standards Mapping - OWASP Top 10 2017 
+
 [18] Standards Mapping - OWASP Top 10 2021 
+
 [19] Standards Mapping - OWASP Mobile 2014 
+
 [20] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [29] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [30] Standards Mapping - SANS Top 25 2009 
+
 [31] Standards Mapping - SANS Top 25 2010 
+
 [32] Standards Mapping - SANS Top 25 2011 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [51] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [52] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [53] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2167,49 +3173,93 @@ Many users have been educated to always inspect URLs they receive in emails to m
 
 then even a savvy end-user may be fooled into following the link.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - FIPS200 
+
 [4] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [5] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [6] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [7] Standards Mapping - OWASP Top 10 2004 
+
 [8] Standards Mapping - OWASP Top 10 2010 
+
 [9] Standards Mapping - OWASP Top 10 2013 
+
 [10] Standards Mapping - OWASP Top 10 2021 
+
 [11] Standards Mapping - OWASP Mobile 2014 
+
 [12] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [13] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [14] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [15] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [20] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [21] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [22] Standards Mapping - SANS Top 25 2010 
+
 [23] Standards Mapping - SANS Top 25 2011 
+
 [24] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [43] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [44] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2262,58 +3312,111 @@ handle = os.open(filename)
 print handle
 ...
 References
+
 [1] G. Hoglund, G. McGraw Exploiting Software Addison-Wesley
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [5] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [6] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [7] Standards Mapping - FIPS200 
+
 [8] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [9] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [10] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [12] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [13] Standards Mapping - OWASP Top 10 2004 
+
 [14] Standards Mapping - OWASP Top 10 2007 
+
 [15] Standards Mapping - OWASP Top 10 2010 
+
 [16] Standards Mapping - OWASP Top 10 2013 
+
 [17] Standards Mapping - OWASP Top 10 2017 
+
 [18] Standards Mapping - OWASP Top 10 2021 
+
 [19] Standards Mapping - OWASP Mobile 2014 
+
 [20] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [28] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [29] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [30] Standards Mapping - SANS Top 25 2009 
+
 [31] Standards Mapping - SANS Top 25 2010 
+
 [32] Standards Mapping - SANS Top 25 2011 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [51] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [52] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [53] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2350,55 +3453,105 @@ def untar(archive_name):
     tf.extractall(".")
     tf.close()
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [5] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [6] Standards Mapping - FIPS200 
+
 [7] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [10] Standards Mapping - OWASP Top 10 2004 
+
 [11] Standards Mapping - OWASP Top 10 2007 
+
 [12] Standards Mapping - OWASP Top 10 2010 
+
 [13] Standards Mapping - OWASP Top 10 2013 
+
 [14] Standards Mapping - OWASP Top 10 2017 
+
 [15] Standards Mapping - OWASP Top 10 2021 
+
 [16] Standards Mapping - OWASP Mobile 2014 
+
 [17] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - SANS Top 25 2009 
+
 [28] Standards Mapping - SANS Top 25 2010 
+
 [29] Standards Mapping - SANS Top 25 2011 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [49] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [50] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2454,50 +3607,95 @@ result = c.execute('SELECT * FROM pricelist')
 
 The kind of resource affected by user input indicates the kind of content that may be dangerous. For example, data containing special characters like period, slash, and backslash are risky when used in methods that interact with the file system. Similarly, data that contains URLs and URIs is risky for functions that create remote connections.
 References
+
 [1] G. Hoglund, G. McGraw Exploiting Software Addison-Wesley
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [4] Standards Mapping - FIPS200 
+
 [5] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [6] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [7] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [10] Standards Mapping - OWASP Top 10 2004 
+
 [11] Standards Mapping - OWASP Top 10 2007 
+
 [12] Standards Mapping - OWASP Top 10 2010 
+
 [13] Standards Mapping - OWASP Top 10 2013 
+
 [14] Standards Mapping - OWASP Top 10 2017 
+
 [15] Standards Mapping - OWASP Top 10 2021 
+
 [16] Standards Mapping - OWASP Mobile 2014 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [45] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2551,51 +3749,97 @@ An attacker can leverage this hijacked network connection to perform the followi
 - Perform a DNS cache poisoning attack.
 
 References
+
 [1] Alexander Polyakov SSRF vs. Business critical applications BlackHat 2012
+
 [2] SSRF bible. Cheatsheet ONSec Labs
+
 [3] Standards Mapping - Common Weakness Enumeration 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [5] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [6] Standards Mapping - FIPS200 
+
 [7] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [10] Standards Mapping - OWASP Top 10 2004 
+
 [11] Standards Mapping - OWASP Top 10 2007 
+
 [12] Standards Mapping - OWASP Top 10 2010 
+
 [13] Standards Mapping - OWASP Top 10 2013 
+
 [14] Standards Mapping - OWASP Top 10 2017 
+
 [15] Standards Mapping - OWASP Top 10 2021 
+
 [16] Standards Mapping - OWASP Mobile 2014 
+
 [17] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [46] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2648,52 +3892,99 @@ def process_request(request):
     return HttpResponse(html)
 Example 2 uses Django as the template engine. For that engine, an attacker will not be able to execute arbitrary commands, but they will be able to access all the objects in the template context. In this example, a secret token is available in the context and could be leaked by the attacker.
 References
+
 [1] Server-Side Template Injection: RCE for the modern webapp BlackHat
+
 [2] Standards Mapping - Common Weakness Enumeration 
+
 [3] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [4] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [5] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [6] Standards Mapping - FIPS200 
+
 [7] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [9] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [10] Standards Mapping - OWASP Top 10 2004 
+
 [11] Standards Mapping - OWASP Top 10 2007 
+
 [12] Standards Mapping - OWASP Top 10 2010 
+
 [13] Standards Mapping - OWASP Top 10 2013 
+
 [14] Standards Mapping - OWASP Top 10 2017 
+
 [15] Standards Mapping - OWASP Top 10 2021 
+
 [16] Standards Mapping - OWASP Mobile 2014 
+
 [17] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - SANS Top 25 2009 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2740,44 +4031,83 @@ In this example, an attacker could set any arbitrary environment variable and af
 
 In general, do not allow user-provided or otherwise untrusted data to control sensitive values. The leverage that an attacker gains by controlling these values is not always immediately obvious, but do not underestimate the creativity of your attacker.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [4] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [5] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [6] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [8] Standards Mapping - OWASP Top 10 2004 
+
 [9] Standards Mapping - OWASP Top 10 2021 
+
 [10] Standards Mapping - OWASP Mobile 2014 
+
 [11] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [12] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [13] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [14] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [15] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [18] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [19] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [20] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [21] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [22] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [23] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [24] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [39] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2891,61 +4221,117 @@ Manually escaping characters in input to SQL queries can help, but it will not m
 
 Another solution commonly proposed for dealing with SQL injection attacks is to use stored procedures. Although stored procedures prevent some types of SQL injection attacks, they fail to protect against many others. Stored procedures typically help prevent SQL injection attacks by limiting the types of statements that can be passed to their parameters. However, there are many ways around the limitations and many interesting statements that can still be passed to stored procedures. Again, stored procedures can prevent some exploits, but they will not make your application secure against SQL injection attacks.
 References
+
 [1] S. J. Friedl SQL Injection Attacks by Example
+
 [2] P. Litwin Stop SQL Injection Attacks Before They Stop You MSDN Magazine
+
 [3] P. Finnigan SQL Injection and Oracle, Part One Security Focus
+
 [4] M. Howard, D. LeBlanc Writing Secure Code, Second Edition Microsoft Press
+
 [5] Standards Mapping - Common Weakness Enumeration 
+
 [6] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [7] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [8] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [9] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [10] Standards Mapping - FIPS200 
+
 [11] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [12] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [13] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [14] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [15] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [16] Standards Mapping - OWASP Top 10 2004 
+
 [17] Standards Mapping - OWASP Top 10 2007 
+
 [18] Standards Mapping - OWASP Top 10 2010 
+
 [19] Standards Mapping - OWASP Top 10 2013 
+
 [20] Standards Mapping - OWASP Top 10 2017 
+
 [21] Standards Mapping - OWASP Top 10 2021 
+
 [22] Standards Mapping - OWASP Mobile 2014 
+
 [23] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [25] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [26] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [28] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [29] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [30] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [31] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [32] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [33] Standards Mapping - SANS Top 25 2009 
+
 [34] Standards Mapping - SANS Top 25 2010 
+
 [35] Standards Mapping - SANS Top 25 2011 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [51] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [52] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [53] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [54] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [55] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [56] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -2972,50 +4358,95 @@ If an attacker can supply values that the application then uses to determine whi
 
 This situation becomes a doomsday scenario if the attacker may upload files into a location that appears on the application's classpath or add new entries to the application's classpath. Under either of these conditions, the attacker may use reflection to introduce new, presumably malicious, behavior into the application.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - FIPS200 
+
 [4] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [5] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [6] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [45] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -3054,52 +4485,99 @@ The following XML document shows an example of an XML Bomb.
 
 This test could crash the server by expanding the small XML document into more than 3GB in memory.
 References
+
 [1] XML vulnerabilities
+
 [2] Announcing defusedxml, Fixes for XML Security Issues
+
 [3] defusedxml
+
 [4] defusedexpat
+
 [5] XML External Entity (XXE) Processing OWASP
+
 [6] Testing for XML Injection OWASP
+
 [7] XML External Entities The Web Application Security Consortium
+
 [8] Standards Mapping - Common Weakness Enumeration 
+
 [9] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [10] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [11] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [12] Standards Mapping - OWASP Top 10 2004 
+
 [13] Standards Mapping - OWASP Top 10 2007 
+
 [14] Standards Mapping - OWASP Top 10 2010 
+
 [15] Standards Mapping - OWASP Top 10 2013 
+
 [16] Standards Mapping - OWASP Top 10 2017 
+
 [17] Standards Mapping - OWASP Top 10 2021 
+
 [18] Standards Mapping - OWASP Mobile 2014 
+
 [19] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [24] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [26] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [46] Standards Mapping - Web Application Security Consortium 24 + 2 
+
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -3131,60 +4609,115 @@ Example 1: The following XML document shows an example of an XXE attack.
 
 This example could crash the server (on a UNIX system), if the XML parser attempts to substitute the entity with the contents of the /dev/random file.
 References
+
 [1] XML vulnerabilities
+
 [2] Announcing defusedxml, Fixes for XML Security Issues
+
 [3] defusedxml
+
 [4] defusedexpat
+
 [5] XML External Entity (XXE) Processing OWASP
+
 [6] Testing for XML Injection (OWASP-DV-008) OWASP
+
 [7] XML External Entities The Web Application Security Consortium
+
 [8] Standards Mapping - Common Weakness Enumeration 
+
 [9] Standards Mapping - Common Weakness Enumeration Top 25 2019 
+
 [10] Standards Mapping - Common Weakness Enumeration Top 25 2020 
+
 [11] Standards Mapping - Common Weakness Enumeration Top 25 2021 
+
 [12] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [13] Standards Mapping - FIPS200 
+
 [14] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [15] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [16] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [17] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [18] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [19] Standards Mapping - OWASP Top 10 2004 
+
 [20] Standards Mapping - OWASP Top 10 2007 
+
 [21] Standards Mapping - OWASP Top 10 2010 
+
 [22] Standards Mapping - OWASP Top 10 2013 
+
 [23] Standards Mapping - OWASP Top 10 2017 
+
 [24] Standards Mapping - OWASP Top 10 2021 
+
 [25] Standards Mapping - OWASP Mobile 2014 
+
 [26] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [27] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [28] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [29] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [30] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [31] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [32] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [33] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [34] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [35] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [45] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [46] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [47] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [48] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [49] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [50] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [51] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [52] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [53] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [54] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [55] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -3239,50 +4772,95 @@ Now suppose this XML is included in a back end web service request to place an o
 
 When using SAX parsers, the value from the second <price> overrides the value from the first <price> tag. This allows the attacker to purchase a pair of $100 shoes for $1.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - FIPS200 
+
 [4] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [5] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [6] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [45] Standards Mapping - Web Application Security Consortium Version 2.00 
 
 
@@ -3334,52 +4912,98 @@ The addition of the 1' or '1' = '1 condition causes the where clause to always e
 
 This simplification of the query allows the attacker to bypass the requirement that the query must only return items owned by the authenticated user. The query now returns all email addresses stored in the document, regardless of their specified owner.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - FIPS200 
+
 [4] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [5] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C Guidelines 2012 
+
 [6] Standards Mapping - Motor Industry Software Reliability Association (MISRA) C++ Guidelines 2008 
+
 [7] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [8] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [9] Standards Mapping - OWASP Top 10 2004 
+
 [10] Standards Mapping - OWASP Top 10 2007 
+
 [11] Standards Mapping - OWASP Top 10 2010 
+
 [12] Standards Mapping - OWASP Top 10 2013 
+
 [13] Standards Mapping - OWASP Top 10 2017 
+
 [14] Standards Mapping - OWASP Top 10 2021 
+
 [15] Standards Mapping - OWASP Mobile 2014 
+
 [16] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [22] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [23] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [24] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [25] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [43] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [44] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [45] Standards Mapping - Web Application Security Consortium 24 + 2 
-[46] Standards Mapping - Web Application Security Consortium Version 2.00 
+
+[46] Standards Mapping - Web Application Security Consortium Version 2.00
 
 
 
@@ -3451,47 +5075,90 @@ When the XSL stylesheet is processed, the <script> tag is rendered to the victim
 
 The preceding XSL stylesheet will return the contents of the /etc/passwd file.
 References
+
 [1] Standards Mapping - Common Weakness Enumeration 
+
 [2] Standards Mapping - DISA Control Correlation Identifier Version 2 
+
 [3] Standards Mapping - FIPS200 
+
 [4] Standards Mapping - General Data Protection Regulation (GDPR) 
+
 [5] Standards Mapping - NIST Special Publication 800-53 Revision 4 
+
 [6] Standards Mapping - NIST Special Publication 800-53 Revision 5 
+
 [7] Standards Mapping - OWASP Top 10 2004 
+
 [8] Standards Mapping - OWASP Top 10 2007 
+
 [9] Standards Mapping - OWASP Top 10 2010 
+
 [10] Standards Mapping - OWASP Top 10 2013 
+
 [11] Standards Mapping - OWASP Top 10 2017 
+
 [12] Standards Mapping - OWASP Top 10 2021 
+
 [13] Standards Mapping - OWASP Mobile 2014 
+
 [14] Standards Mapping - OWASP Application Security Verification Standard 4.0 
+
 [15] Standards Mapping - Payment Card Industry Data Security Standard Version 1.1 
+
 [16] Standards Mapping - Payment Card Industry Data Security Standard Version 1.2 
+
 [17] Standards Mapping - Payment Card Industry Data Security Standard Version 2.0 
+
 [18] Standards Mapping - Payment Card Industry Data Security Standard Version 3.0 
+
 [19] Standards Mapping - Payment Card Industry Data Security Standard Version 3.1 
+
 [20] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2 
+
 [21] Standards Mapping - Payment Card Industry Data Security Standard Version 3.2.1 
+
 [22] Standards Mapping - Payment Card Industry Software Security Framework 1.0 
+
 [23] Standards Mapping - Payment Card Industry Software Security Framework 1.1 
+
 [24] Standards Mapping - Security Technical Implementation Guide Version 3.1 
+
 [25] Standards Mapping - Security Technical Implementation Guide Version 3.4 
+
 [26] Standards Mapping - Security Technical Implementation Guide Version 3.5 
+
 [27] Standards Mapping - Security Technical Implementation Guide Version 3.6 
+
 [28] Standards Mapping - Security Technical Implementation Guide Version 3.7 
+
 [29] Standards Mapping - Security Technical Implementation Guide Version 3.9 
+
 [30] Standards Mapping - Security Technical Implementation Guide Version 3.10 
+
 [31] Standards Mapping - Security Technical Implementation Guide Version 4.1 
+
 [32] Standards Mapping - Security Technical Implementation Guide Version 4.2 
+
 [33] Standards Mapping - Security Technical Implementation Guide Version 4.3 
+
 [34] Standards Mapping - Security Technical Implementation Guide Version 4.4 
+
 [35] Standards Mapping - Security Technical Implementation Guide Version 4.5 
+
 [36] Standards Mapping - Security Technical Implementation Guide Version 4.6 
+
 [37] Standards Mapping - Security Technical Implementation Guide Version 4.7 
+
 [38] Standards Mapping - Security Technical Implementation Guide Version 4.8 
+
 [39] Standards Mapping - Security Technical Implementation Guide Version 4.9 
+
 [40] Standards Mapping - Security Technical Implementation Guide Version 4.10 
+
 [41] Standards Mapping - Security Technical Implementation Guide Version 4.11 
+
 [42] Standards Mapping - Security Technical Implementation Guide Version 5.1 
+
 [43] Standards Mapping - Web Application Security Consortium Version 2.00 
 

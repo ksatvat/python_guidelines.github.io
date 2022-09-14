@@ -1019,7 +1019,7 @@ Path Manipulation: ZIP Entry Overwrite errors occur when a ZIP file is opened an
 Example: The following example extracts files from a ZIP file and insecurely writes them to disk.
 
 
-
+...
 import zipfile
 import tarfile
 
@@ -1032,7 +1032,7 @@ def untar(archive_name):
     tf = tarfile.TarFile(archive_name)
     tf.extractall(".")
     tf.close()
-
+...
 
 
 

@@ -605,38 +605,38 @@ Example: The following code segment reads the subject and body of a "Contact us"
 
 
 
-body = request.GET['body']
-subject = request.GET['subject']
-session = smtplib.SMTP(smtp_server, smtp_tls_port)
-session.ehlo()
-session.starttls()
-session.login(username, password)
-headers = "\r\n".join(["from: webform@acme.com",
-                       "subject: [Contact us query] " + subject,
-                       "to: support@acme.com",
-                       "mime-version: 1.0",
-                       "content-type: text/html"])
-content = headers + "\r\n\r\n" + body
-session.sendmail("webform@acme.com", "support@acme.com", content)
+	body = request.GET['body']
+	subject = request.GET['subject']
+	session = smtplib.SMTP(smtp_server, smtp_tls_port)
+	session.ehlo()
+	session.starttls()
+	session.login(username, password)
+	headers = "\r\n".join(["from: webform@acme.com",
+			       "subject: [Contact us query] " + subject,
+			       "to: support@acme.com",
+			       "mime-version: 1.0",
+			       "content-type: text/html"])
+	content = headers + "\r\n\r\n" + body
+	session.sendmail("webform@acme.com", "support@acme.com", content)
 
 
 Assuming a string consisting of standard alphanumeric characters, such as "Page not working" is submitted in the request, the SMTP headers might take the following form:
 
 
 
-...
-subject: [Contact us query] Page not working
-...
+	...
+	subject: [Contact us query] Page not working
+	...
 
 
 However, because the value of the header is constructed from unvalidated user input the response will only maintain this form if the value submitted for subject does not contain any CR and LF characters. If an attacker submits a malicious string, such as "Congratulations!! You won the lottery!!!\r\ncc:victim1@mail.com,victim2@mail.com ...", then the SMTP headers would be of the following form:
 
 
 
-...
-subject: [Contact us query] Congratulations!! You won the lottery
-cc: victim1@mail.com,victim2@mail.com
-...
+	...
+	subject: [Contact us query] Congratulations!! You won the lottery
+	cc: victim1@mail.com,victim2@mail.com
+	...
 
 
 This will effectively allow an attacker to craft spam messages or to send anonymous emails amongst other attacks.
@@ -679,35 +679,35 @@ Example : The following python code update a json file with an untrusted value c
 
 
 
-import json
-import requests
-from urllib.parse import urlparse
-from urllib.parse import parse_qs
+	import json
+	import requests
+	from urllib.parse import urlparse
+	from urllib.parse import parse_qs
 
-url = 'https://www.example.com/some_path?name=some_value'
-parsed_url = urlparse(url)
-untrusted_values = parse_qs(parsed_url.query)['name'][0]
+	url = 'https://www.example.com/some_path?name=some_value'
+	parsed_url = urlparse(url)
+	untrusted_values = parse_qs(parsed_url.query)['name'][0]
 
-with open('data.json', 'r') as json_File:    
-    data = json.load(json_File)
+	with open('data.json', 'r') as json_File:    
+	    data = json.load(json_File)
 
-    data['name']= untrusted_values
-    
-with open('data.json', 'w') as json_File:
-    json.dump(data, json_File)
+	    data['name']= untrusted_values
 
-...
+	with open('data.json', 'w') as json_File:
+	    json.dump(data, json_File)
+
+	...
 
 
 Here the untrusted data in name will not be validated to escape JSON-related special characters. This allows a user to arbitrarily insert JSON keys, possibly changing the structure of the serialized JSON. In this example, if the non-privileged user mallory were to append ","role":"admin to the name parameter in the URL, the JSON would become:
 
 
 
-{
-"role":"user",
-"username":"mallory",
-"role":"admin"
-}
+	{
+	"role":"user",
+	"username":"mallory",
+	"role":"admin"
+	}
 
 The JSON file is now tampered with malicious data and the user has a privileged access of "admin" instead of "user"
 
@@ -750,14 +750,14 @@ If a user submits the string "twenty-one" for logout and he was able to create a
 
 
 
-Attempt to log out: name: admin logout: twenty-one
+	Attempt to log out: name: admin logout: twenty-one
 
 
 However, if an attacker is able to create a username "admin+logout:+1+++++++++++++++++++++++", the following entry is logged:
 
 
 
-Attempt to log out: name: admin logout: 1                       logout: twenty-one
+	Attempt to log out: name: admin logout: 1                       logout: twenty-one
 
 
 
@@ -783,13 +783,13 @@ Example 1: The following web application code attempts to read an integer value 
 
 
 
-...
-val = request.GET["val"]
-try:
-  int_value = int(val)
-except:
-  logger.debug("Failed to parse val = " + val)
-...
+	...
+	val = request.GET["val"]
+	try:
+	  int_value = int(val)
+	except:
+	  logger.debug("Failed to parse val = " + val)
+	...
 
 
 If a user submits the string "twenty-one" for val, the following entry is logged:
@@ -832,14 +832,14 @@ Example 1: The following code uses an HTTP request parameter to craft a VRFY com
 
 
 
-...
-user = request.GET['user']
-session = smtplib.SMTP(smtp_server, smtp_tls_port)
-session.ehlo()
-session.starttls()
-session.login(username, password)
-session.docmd("VRFY", user)
-...
+	...
+	user = request.GET['user']
+	session = smtplib.SMTP(smtp_server, smtp_tls_port)
+	session.ehlo()
+	session.starttls()
+	session.login(username, password)
+	session.docmd("VRFY", user)
+	...
 
 
 
@@ -864,15 +864,15 @@ Example 1: The following code dynamically constructs a Memcached key.
 
 
 
-...
-def store(request):
-    id = request.GET['id']
-    result = get_page_from_somewhere()
-    response = HttpResponse(result)
-    cache_time = 1800
-    cache.set("req-" % id, response, cache_time)
-    return response
-...
+	...
+	def store(request):
+	    id = request.GET['id']
+	    result = get_page_from_somewhere()
+	    response = HttpResponse(result)
+	    cache_time = 1800
+	    cache.set("req-" % id, response, cache_time)
+	    return response
+	...
 
 
 The operation that this code intends to execute follows:
@@ -887,12 +887,12 @@ However, because the operation is constructed dynamically by concatenating a con
 
 
 
-set req-ignore 0 0 1
-1
-set injected 0 3600 10
-0123456789
-set req-1233 0 0 n
-<serialized_response_instance>
+	set req-ignore 0 0 1
+	1
+	set injected 0 3600 10
+	0123456789
+	set req-1233 0 0 n
+	<serialized_response_instance>
 
 
 The preceding key will successfully add a new key/value pair in the cache injected=0123456789. Depending on the payload, attackers will be able to poison the cache or execute arbitrary code by injecting a Pickle-serialized payload that will execute arbitrary code upon deserialization.
@@ -918,11 +918,11 @@ Example 1: The following code dynamically constructs and executes a MongoDB quer
 
 
 
-...
-    userName = req.field('userName')
-    emailId = req.field('emaiId')
-    results = db.emails.find({"$where", "this.owner == \"" + userName + "\" && this.emailId == \"" + emailId + "\""});
-...
+	...
+	    userName = req.field('userName')
+	    emailId = req.field('emaiId')
+	    results = db.emails.find({"$where", "this.owner == \"" + userName + "\" && this.emailId == \"" + emailId + "\""});
+	...
 
 
 The query intends to execute the following code:
@@ -1018,20 +1018,20 @@ Path Manipulation: ZIP Entry Overwrite errors occur when a ZIP file is opened an
 Example: The following example extracts files from a ZIP file and insecurely writes them to disk.
 
 
-...
-import zipfile
-import tarfile
+	...
+	import zipfile
+	import tarfile
 
-def unzip(archive_name):
-    zf = zipfile.ZipFile(archive_name)
-    zf.extractall(".")
-    zf.close()
+	def unzip(archive_name):
+	    zf = zipfile.ZipFile(archive_name)
+	    zf.extractall(".")
+	    zf.close()
 
-def untar(archive_name):
-    tf = tarfile.TarFile(archive_name)
-    tf.extractall(".")
-    tf.close()
-...
+	def untar(archive_name):
+	    tf = tarfile.TarFile(archive_name)
+	    tf.extractall(".")
+	    tf.close()
+	...
 
 
 
@@ -1061,12 +1061,12 @@ Example: The following code uses a hostname read from an HTTP request to connect
 
 
 
-host=request.GET['host']
-dbconn = db.connect(host=host, port=1234, dbname=ticketdb)
-c = dbconn.cursor()
-...
-result = c.execute('SELECT * FROM pricelist')
-...
+	host=request.GET['host']
+	dbconn = db.connect(host=host, port=1234, dbname=ticketdb)
+	c = dbconn.cursor()
+	...
+	result = c.execute('SELECT * FROM pricelist')
+	...
 
 
 The kind of resource affected by user input indicates the kind of content that may be dangerous. For example, data containing special characters like period, slash, and backslash are risky when used in methods that interact with the file system. Similarly, data that contains URLs and URIs is risky for functions that create remote connections.
@@ -1148,17 +1148,18 @@ template={{''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read()}}
 Example 2: The following example shows how a template is retrieved from an HTTP request and rendered using the Django template engine.
 
 
-from django.http import HttpResponse
-from django.template import Template, Context, Engine
+	from django.http import HttpResponse
+	from django.template import Template, Context, Engine
 
-def process_request(request):
-    # Load the template
-    template = source(request.GET['template'])
-    t = Template(template)
-    user = {"name": "John", "secret":getToken()}
-    ctx = Context(locals())
-    html = t.render(ctx)
-    return HttpResponse(html)
+	def process_request(request):
+	    # Load the template
+	    template = source(request.GET['template'])
+	    t = Template(template)
+	    user = {"name": "John", "secret":getToken()}
+	    ctx = Context(locals())
+	    html = t.render(ctx)
+	    return HttpResponse(html)
+
 Example 2 uses Django as the template engine. For that engine, an attacker will not be able to execute arbitrary commands, but they will be able to access all the objects in the template context. In this example, a secret token is available in the context and could be leaked by the attacker.
 
 
@@ -1320,19 +1321,19 @@ XML Entity Expansion injection also known as XML Bombs are DoS attacks that bene
 The following XML document shows an example of an XML Bomb.
 
 
-<?xml version="1.0"?>
-<!DOCTYPE lolz [
-  <!ENTITY lol "lol">
-  <!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
-  <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
-  <!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
-  <!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;">
-  <!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;">
-  <!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
-  <!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
-  <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
-]>
-<lolz>&lol9;</lolz>
+	<?xml version="1.0"?>
+	<!DOCTYPE lolz [
+	  <!ENTITY lol "lol">
+	  <!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+	  <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+	  <!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
+	  <!ENTITY lol5 "&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;&lol4;">
+	  <!ENTITY lol6 "&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;&lol5;">
+	  <!ENTITY lol7 "&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;&lol6;">
+	  <!ENTITY lol8 "&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;&lol7;">
+	  <!ENTITY lol9 "&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;&lol8;">
+	]>
+	<lolz>&lol9;</lolz>
 
 
 This test could crash the server by expanding the small XML document into more than 3GB in memory.
@@ -1351,10 +1352,10 @@ XML External Entities attacks benefit from an XML feature to dynamically build d
 Example 1: The following XML document shows an example of an XXE attack.
 
 
-<?xml version="1.0" encoding="ISO-8859-1"?>
- <!DOCTYPE foo [
-  <!ELEMENT foo ANY >
-  <!ENTITY xxe SYSTEM "file:///dev/random" >]><foo>&xxe;</foo>
+	<?xml version="1.0" encoding="ISO-8859-1"?>
+	 <!DOCTYPE foo [
+	  <!ELEMENT foo ANY >
+	  <!ENTITY xxe SYSTEM "file:///dev/random" >]><foo>&xxe;</foo>
 
 
 This example could crash the server (on a UNIX system), if the XML parser attempts to substitute the entity with the contents of the /dev/random file.
@@ -1384,19 +1385,19 @@ Example 1:
 Assume an attacker is able to control shoes in following XML.
 
 
-<order>
-    <price>100.00</price>
-    <item>shoes</item>
-</order>
+	<order>
+	    <price>100.00</price>
+	    <item>shoes</item>
+	</order>
 
 
 Now suppose this XML is included in a back end web service request to place an order for a pair of shoes. Suppose the attacker modifies his request and replaces shoes with shoes</item><price>1.00</price><item>shoes. The new XML would look like:
 
 
-<order>
-    <price>100.00</price>
-    <item>shoes</item><price>1.00</price><item>shoes</item>
-</order>
+	<order>
+	    <price>100.00</price>
+	    <item>shoes</item><price>1.00</price><item>shoes</item>
+	</order>
 
 
 When using SAX parsers, the value from the second <price> overrides the value from the first <price> tag. This allows the attacker to purchase a pair of $100 shoes for $1.
@@ -1423,11 +1424,11 @@ Example 1: The following code dynamically constructs and executes an XPath query
 
 
 
-...
-tree = etree.parse('articles.xml')
-emailAddrs = "/accounts/account[acctID=" + request.GET["test1"] + "]/email/text()"
-r = tree.xpath(emailAddrs)
-...
+	...
+	tree = etree.parse('articles.xml')
+	emailAddrs = "/accounts/account[acctID=" + request.GET["test1"] + "]/email/text()"
+	r = tree.xpath(emailAddrs)
+	...
 
 
 Under normal conditions, such as searching for an email address that belongs to the account number 1, the query that this code executes will look like the following:
@@ -1485,11 +1486,11 @@ The code in Example 1 results in three different exploits when the attacker pass
 
 
 
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:template match="/">
-    <script>alert(123)</script>
-  </xsl:template>
-</xsl:stylesheet>
+	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	  <xsl:template match="/">
+	    <script>alert(123)</script>
+	  </xsl:template>
+	</xsl:stylesheet>
 
 
 
@@ -1500,11 +1501,11 @@ When the XSL stylesheet is processed, the <script> tag is rendered to the victim
 
 
 
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:template match="/">
-    <xsl:copy-of select="document('/etc/passwd')"/>
-  </xsl:template>
-</xsl:stylesheet>
+	<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	  <xsl:template match="/">
+	    <xsl:copy-of select="document('/etc/passwd')"/>
+	  </xsl:template>
+	</xsl:stylesheet>
 
 
 

@@ -49,9 +49,9 @@ Example 3: The following code is from a web application that provides an interfa
 
 
 
-...
+	...
 	result = os.system("make");
-...
+	...
 
 
 The problem here is that the program does not specify an absolute path for make and fails to clean its environment prior to executing the call to os.system(). If an attacker can modify the $PATH variable to point to a malicious binary called make and cause the program to be executed in their environment, then the malicious binary will be loaded instead of the one intended. Because of the nature of the application, it runs with the privileges necessary to perform system operations, which means the attacker's make will now be run with these privileges, possibly giving the attacker complete control of the system.
@@ -121,28 +121,28 @@ Example 1: The following AWS Lambda function reflects user data in an applicatio
 
 
 
-def mylambda_handler(event, context):
-    name = event['name']
-    response = {
-        "statusCode": 200,
-        "body": "{'name': name}",
-        "headers": {
-            'Content-Type': 'application/json',
-        }
-    }
-    return response
+	def mylambda_handler(event, context):
+	    name = event['name']
+	    response = {
+		"statusCode": 200,
+		"body": "{'name': name}",
+		"headers": {
+		    'Content-Type': 'application/json',
+		}
+	    }
+	    return response
 
 
 If an attacker sends a request with the name parameter set to <html><body><script>alert(1)</script></body></html>, the server will produce the following response:
 
 
 
-HTTP/1.1 200 OK
-Content-Length: 88
-Content-Type: application/json
-Connection: Closed
+	HTTP/1.1 200 OK
+	Content-Length: 88
+	Content-Type: application/json
+	Connection: Closed
 
-{'name': '<html><body><script>alert(1)</script></body></html>'}
+	{'name': '<html><body><script>alert(1)</script></body></html>'}
 
 
 Even though, the response clearly states that it should be treated as a JSON document, an old browser may still try to render it as an HTML document, making it vulnerable to a Cross-Site Scripting attack.
@@ -189,11 +189,11 @@ Example 2: The following Python code segment queries a database for an employee 
 
 
 
- ...
- cursor.execute("select * from emp where id="+eid)
- row = cursor.fetchone()
- self.writeln('Employee name: ' + row["emp"]')
- ...
+
+	 cursor.execute("select * from emp where id="+eid)
+	 row = cursor.fetchone()
+	 self.writeln('Employee name: ' + row["emp"]')
+
 
 
 As in Example 1, this code functions correctly when the values of name are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of name is read from a database, whose contents are apparently managed by the application. However, if the value of name originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it difficult to identify the threat and increases the possibility that the attack might affect multiple users. XSS got its start in this form with web sites that offered a "guestbook" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.
@@ -241,11 +241,11 @@ Example 2: The following Python code segment queries a database for an employee 
 
 
 
- ...
- cursor.execute("select * from emp where id="+eid)
- row = cursor.fetchone()
- self.writeln('Employee name: ' + row["emp"]')
- ...
+	 ...
+	 cursor.execute("select * from emp where id="+eid)
+	 row = cursor.fetchone()
+	 self.writeln('Employee name: ' + row["emp"]')
+	 ...
 
 
 As in Example 1, this code functions correctly when the values of name are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of name is read from a database, whose contents are apparently managed by the application. However, if the value of name originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it difficult to identify the threat and increases the possibility that the attack might affect multiple users. XSS got its start in this form with web sites that offered a "guestbook" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.
@@ -292,11 +292,10 @@ Example 2: The following Python code segment queries a database for an employee 
 
 
 
- ...
- cursor.execute("select * from emp where id="+eid)
- row = cursor.fetchone()
- self.writeln('Employee name: ' + escape(row["emp"]))
- ...
+
+	 cursor.execute("select * from emp where id="+eid)
+	 row = cursor.fetchone()
+	 self.writeln('Employee name: ' + escape(row["emp"]))
 
 
 As in Example 1, this code functions correctly when the values of name are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of name is read from a database, whose contents are apparently managed by the application. However, if the value of name originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it difficult to identify the threat and increases the possibility that the attack might affect multiple users. XSS got its start in this form with web sites that offered a "guestbook" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.
@@ -344,11 +343,11 @@ Example 2: The following Python code segment queries a database for an employee 
 
 
 
- ...
- cursor.execute("select * from emp where id="+eid)
- row = cursor.fetchone()
- self.writeln('Employee name: ' + row["emp"]')
- ...
+	 ...
+	 cursor.execute("select * from emp where id="+eid)
+	 row = cursor.fetchone()
+	 self.writeln('Employee name: ' + row["emp"]')
+	 ...
 
 
 As in Example 1, this code functions correctly when the values of name are well-behaved, but it does nothing to prevent exploits if they are not. Again, this code can appear less dangerous because the value of name is read from a database, whose contents are apparently managed by the application. However, if the value of name originates from user-supplied data, then the database can be a conduit for malicious content. Without proper input validation on all data stored in the database, an attacker may execute malicious commands in the user's web browser. This type of exploit, known as Persistent (or Stored) XSS, is particularly insidious because the indirection caused by the data store makes it difficult to identify the threat and increases the possibility that the attack might affect multiple users. XSS got its start in this form with web sites that offered a "guestbook" to visitors. Attackers would include JavaScript in their guestbook entries, and all subsequent visitors to the guestbook page would execute the malicious code.

@@ -36,11 +36,11 @@ Example 2: The following code is from an administrative web application designed
 
 
 
-...
-	btype = req.field('backuptype')
-	cmd = "cmd.exe /K \"c:\\util\\rmanDB.bat " + btype + "&&c:\\util\\cleanup.bat\""
-	os.system(cmd);
-...
+	...
+		btype = req.field('backuptype')
+		cmd = "cmd.exe /K \"c:\\util\\rmanDB.bat " + btype + "&&c:\\util\\cleanup.bat\""
+		os.system(cmd);
+	...
 
 
 The problem here is that the program does not do any validation on the backuptype parameter read from the user. Typically the Runtime.exec() function will not execute multiple commands, but in this case the program first runs the cmd.exe shell in order to run multiple commands with a single call to Runtime.exec(). After the shell is invoked, it will allow for the execution of multiple commands separated by two ampersands. If an attacker passes a string of the form "&& del c:\\dbms\\*.*", then the application will execute this command along with the others specified by the program. Because of the nature of the application, it runs with the privileges necessary to interact with the database, which means whatever command the attacker injects will run with those privileges as well.
@@ -76,11 +76,11 @@ Example 1: The following code uses input from an HTTP request to connect to a da
 
 
 
-username = req.field('username')
-password = req.field('password')
-...
-client = MongoClient('mongodb://%s:%s@aMongoDBInstance.com/?ssl=true' % (username, password))
-...
+	username = req.field('username')
+	password = req.field('password')
+	...
+	client = MongoClient('mongodb://%s:%s@aMongoDBInstance.com/?ssl=true' % (username, password))
+	...
 
 
 In this example, the programmer has not considered that an attacker could provide a password parameter such as:
@@ -373,9 +373,9 @@ Explanation
 There is a vulnerability in implementations of regular expression evaluators and related methods that can cause the thread to hang when evaluating regular expressions that contain a grouping expression that is itself repeated. Additionally, any regular expression that contains alternate subexpressions that overlap one another can also be exploited. This defect can be used to execute a Denial of Service (DoS) attack.
 Example:
 
-  (e+)+
-  ([a-zA-Z]+)*
-  (e|ee)+
+	  (e+)+
+	  ([a-zA-Z]+)*
+	  (e|ee)+
 
 There are no known regular expression implementations which are immune to this vulnerability. All platforms and languages are vulnerable to this attack.
 
@@ -396,10 +396,10 @@ Example: In this classic code injection example, the application implements a ba
 
 
 
-...
-userOps = request.GET['operation']
-result = eval(userOps)
-...
+	...
+	userOps = request.GET['operation']
+	result = eval(userOps)
+	...
 
 
 The program behaves correctly when the operation parameter is a benign value, such as "8 + 7 * 2", in which case the result variable is assigned a value of 22. However, if an attacker specifies operations that are both valid and malicious, those operations would be executed with the full privilege of the parent process. Such attacks are even more dangerous when the underlying language provides access to system resources or allows execution of system commands. For example, if an attacker were to specify " os.system('shutdown -h now')" as the value of operation, a shutdown command would be executed on the host system.
@@ -442,10 +442,10 @@ Example 1: The following example deserializes an untrusted YAML string using an 
 
 
 
-import yaml
+	import yaml
 
-yamlString = getYamlFromUser()
-yaml.load(yamlString)
+	yamlString = getYamlFromUser()
+	yaml.load(yamlString)
 
 
 
@@ -485,22 +485,22 @@ Assuming a string consisting of standard alphanumeric characters, such as "index
 
 
 
-HTTP/1.1 200 OK
-...
-location: index.html
-...
+	HTTP/1.1 200 OK
+	...
+	location: index.html
+	...
 
 
 However, because the value of the location is formed of unvalidated user input the response will only maintain this form if the value submitted for some_location does not contain any CR and LF characters. If an attacker submits a malicious string, such as "index.html\r\nHTTP/1.1 200 OK\r\n...", then the HTTP response would be split into two responses of the following form:
 
 
 
-HTTP/1.1 200 OK
-...
-location: index.html
+	HTTP/1.1 200 OK
+	...
+	location: index.html
 
-HTTP/1.1 200 OK
-...
+	HTTP/1.1 200 OK
+	...
 
 
 Clearly, the second response is completely controlled by the attacker and can be constructed with any header and body content desired. The ability of attacker to construct arbitrary HTTP responses permits a variety of resulting attacks, including: cross-user defacement, web and browser cache poisoning, cross-site scripting, and page hijacking.
@@ -554,22 +554,22 @@ Assuming a string consisting of standard alphanumeric characters, such as "index
 
 
 
-HTTP/1.1 200 OK
-...
-location: index.html
-...
+	HTTP/1.1 200 OK
+	...
+	location: index.html
+	...
 
 
 However, because the value of the location is formed of unvalidated user input the response will only maintain this form if the value submitted for some_location does not contain any CR and LF characters. If an attacker submits a malicious string, such as "index.html\r\nHTTP/1.1 200 OK\r\n...", then the HTTP response would be split into two responses of the following form:
 
 
 
-HTTP/1.1 200 OK
-...
-location: index.html
+	HTTP/1.1 200 OK
+	...
+	location: index.html
 
-HTTP/1.1 200 OK
-...
+	HTTP/1.1 200 OK
+	...
 
 
 Clearly, the second response is completely controlled by the attacker and can be constructed with any header and body content desired. The ability of attacker to construct arbitrary HTTP responses permits a variety of resulting attacks, including: cross-user defacement, web and browser cache poisoning, cross-site scripting, and page hijacking.
@@ -1129,23 +1129,24 @@ Template engines are used to render content using dynamic data. This context dat
 Example 1: The following example shows how a template is retrieved from an HTTP request and rendered using the Jinja2 template engine.
 
 
-from django.http import HttpResponse
-from jinja2 import Template as Jinja2_Template
-from jinja2 import Environment, DictLoader, escape
+	from django.http import HttpResponse
+	from jinja2 import Template as Jinja2_Template
+	from jinja2 import Environment, DictLoader, escape
 
-def process_request(request):
-    # Load the template
-    template = request.GET['template']
-    t = Jinja2_Template(template)
-    name = source(request.GET['name'])
-    # Render the template with the context data
-    html = t.render(name=escape(name))
-    return HttpResponse(html)
+	def process_request(request):
+	    # Load the template
+	    template = request.GET['template']
+	    t = Jinja2_Template(template)
+	    name = source(request.GET['name'])
+	    # Render the template with the context data
+	    html = t.render(name=escape(name))
+	    return HttpResponse(html)
+	    
 Example 1 uses Jinja2 as the template engine. For that engine, an attacker could submit the following template to read arbitrary files from the server:
 
 
-template={{''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read()}}
-Example 2: The following example shows how a template is retrieved from an HTTP request and rendered using the Django template engine.
+	template={{''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read()}}
+	Example 2: The following example shows how a template is retrieved from an HTTP request and rendered using the Django template engine.
 
 
 	from django.http import HttpResponse
@@ -1183,11 +1184,11 @@ Example 1: The following code snippet sets an environment variable using user-co
 
 
 
-...
-catalog = request.GET['catalog']
-path = request.GET['path']
-os.putenv(catalog, path)
-...
+	...
+	catalog = request.GET['catalog']
+	path = request.GET['path']
+	os.putenv(catalog, path)
+	...
 
 
 In this example, an attacker could set any arbitrary environment variable and affect how other applications work.
@@ -1303,9 +1304,7 @@ Explanation
 If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner. Even the ability to control the arguments passed to a given method or constructor may give a wily attacker the edge necessary to mount a successful attack.
 
 This situation becomes a doomsday scenario if the attacker may upload files into a location that appears on the application's classpath or add new entries to the application's classpath. Under either of these conditions, the attacker may use reflection to introduce new, presumably malicious, behavior into the application.
-References
 
-[1] Standards Mapping - Common Weakness Enumeration 
 
 
 
@@ -1380,9 +1379,7 @@ Applications typically use XML to store data or send messages. When used to stor
 
 The semantics of XML documents and messages can be altered if an attacker has the ability to write raw XML. In the most benign case, an attacker may be able to insert extraneous tags and cause an XML parser to throw an exception. In more nefarious cases of XML injection, an attacker may be able to add XML elements that change authentication credentials or modify prices in an XML e-commerce database. In some cases, XML injection can lead to cross-site scripting or dynamic code evaluation.
 
-Example 1:
-
-Assume an attacker is able to control shoes in following XML.
+Example 1: Assume an attacker is able to control shoes in following XML.
 
 
 	<order>
@@ -1468,15 +1465,15 @@ Example 1: Here is some code that is vulnerable to XSLT Injection:
 
 
 
-...
-xml = StringIO.StringIO(request.POST['xml'])
-xslt = StringIO.StringIO(request.POST['xslt'])
+	...
+	xml = StringIO.StringIO(request.POST['xml'])
+	xslt = StringIO.StringIO(request.POST['xslt'])
 
-xslt_root = etree.XML(xslt)
-transform = etree.XSLT(xslt_root)
-result_tree = transform(xml)
-return render_to_response(template_name, {'result': etree.tostring(result_tree)})
-...
+	xslt_root = etree.XML(xslt)
+	transform = etree.XSLT(xslt_root)
+	result_tree = transform(xml)
+	return render_to_response(template_name, {'result': etree.tostring(result_tree)})
+	...
 
 
 The code in Example 1 results in three different exploits when the attacker passes the identified XSL to the XSTL processor:

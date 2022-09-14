@@ -49,9 +49,9 @@ Example 3: The following code is from a web application that provides an interfa
 
 
 
-	...
+...
 	result = os.system("make");
-	...
+...
 
 
 The problem here is that the program does not specify an absolute path for make and fails to clean its environment prior to executing the call to os.system(). If an attacker can modify the $PATH variable to point to a malicious binary called make and cause the program to be executed in their environment, then the malicious binary will be loaded instead of the one intended. Because of the nature of the application, it runs with the privileges necessary to perform system operations, which means the attacker's make will now be run with these privileges, possibly giving the attacker complete control of the system.
@@ -121,16 +121,16 @@ Example 1: The following AWS Lambda function reflects user data in an applicatio
 
 
 
-	def mylambda_handler(event, context):
-	    name = event['name']
-	    response = {
-		"statusCode": 200,
-		"body": "{'name': name}",
-		"headers": {
-		    'Content-Type': 'application/json',
-		}
-	    }
-	    return response
+def mylambda_handler(event, context):
+    name = event['name']
+    response = {
+        "statusCode": 200,
+        "body": "{'name': name}",
+        "headers": {
+            'Content-Type': 'application/json',
+        }
+    }
+    return response
 
 
 If an attacker sends a request with the name parameter set to <html><body><script>alert(1)</script></body></html>, the server will produce the following response:

@@ -1602,7 +1602,6 @@ References
 
 [45] Standards Mapping - Web Application Security Consortium Version 2.00 
 
-References
 
 [1] Chema Alonso, Manuel Fernandez, Alejandro Martin and Antonio Guzmán Connection String Parameter Pollution Attacks
 
@@ -1698,7 +1697,6 @@ References
 
 [47] Standards Mapping - Web Application Security Consortium Version 2.00 
 
-References
 
 [1] Standards Mapping - Common Weakness Enumeration 
 

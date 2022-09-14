@@ -2,7 +2,7 @@
 
 # Input validation
 ## Command Injection
-Abstract
+### Abstract
 Executing commands from an untrusted source or in an untrusted environment can cause an application to execute malicious commands on behalf of an attacker.
 Explanation
 Command injection vulnerabilities take two forms:
@@ -61,11 +61,7 @@ The problem here is that the program does not specify an absolute path for make 
 
 
 ## Connection String Parameter Pollution
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Python
-•	Ruby
-Abstract
+### Abstract
 Concatenating unvalidated input into a database connection may allow an attacker to override the value of a request parameter. An attacker may be able to override existing parameter values, inject a new parameter, or exploit variables that are out of direct reach.
 Explanation
 Connection String Parameter Pollution (CSPP) attacks consist of injecting connection string parameters into other existing parameters. This vulnerability is similar to vulnerabilities, and perhaps more well known, within HTTP environments where parameter pollution can also occur. However, it also can apply in other places such as database connection strings. If an application does not properly sanitize the user input, a malicious user may compromise the logic of the application to perform attacks from stealing credentials, to retrieving the entire database. By submitting additional parameters to an application, and if these parameters have the same name as an existing parameter, the database connection may react in one of the following ways:
@@ -102,9 +98,7 @@ This will cause "@aMongoDBInstance.com/?ssl=true" to be treated as an additional
 
 
 ## Cross-Site Scripting: Content Sniffing
-•	Java/JSP
-•	Python
-Abstract
+### Abstract
 Sending unvalidated data to a web browser may result in certain browsers executing malicious code.
 Explanation
 Cross-site scripting (XSS) vulnerabilities occur when:
@@ -165,9 +159,7 @@ Even though, the response clearly states that it should be treated as a JSON doc
 
 
 ## Cross-Site Scripting: Inter-Component Communication (Cloud)
-•	C#/VB.NET/ASP.NET
-•	Python
-Abstract
+### Abstract
 Sending unvalidated data to a web browser can result in the browser executing malicious code.
 Explanation
 Cross-site scripting (XSS) vulnerabilities occur when:
@@ -218,35 +210,8 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 
 
-
-
-
-
-
-
-
-
-
 ## Cross-Site Scripting: Persistent
-•	ABAP
-•	ActionScript
-•	Apex
-•	ColdFusion
-•	COBOL
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Kotlin
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	PLSQL/TSQL
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Sending unvalidated data to a web browser can result in the browser executing malicious code.
 Explanation
 Cross-site scripting (XSS) vulnerabilities occur when:
@@ -295,24 +260,7 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 
 ## Cross-Site Scripting: Poor Validation
-•	ABAP
-•	ActionScript
-•	Apex
-•	ColdFusion
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Kotlin
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	PLSQL/TSQL
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Relying on HTML, XML, and other types of encoding to validate user input can result in the browser executing malicious code.
 Explanation
 The use of certain encoding functions will prevent some, but not all cross-site scripting attacks. Depending on the context in which the data appear, characters beyond the basic <, >, &, and " that are HTML-encoded and those beyond <, >, &, ", and ' that are XML-encoded may take on meta-meaning. Relying on such encoding functions is equivalent to using a weak deny list to prevent cross-site scripting and might allow an attacker to inject malicious code that will be executed in the browser. Because accurately identifying the context in which the data appear statically is not always possible, the Fortify Secure Coding Rulepacks report cross-site scripting findings even when encoding is applied and presents them as Cross-Site Scripting: Poor Validation issues.
@@ -366,25 +314,7 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 
 ## Cross-Site Scripting: Reflected
-•	ABAP
-•	ActionScript
-•	Apex
-•	ColdFusion
-•	COBOL
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Kotlin
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	PLSQL/TSQL
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Sending unvalidated data to a web browser can result in the browser executing malicious code.
 Explanation
 Cross-site scripting (XSS) vulnerabilities occur when:
@@ -438,18 +368,7 @@ As the examples demonstrate, XSS vulnerabilities are caused by code that include
 
 
 ## Denial of Service: Regular Expression
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Kotlin
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	Swift
-Abstract
+### Abstract
 Untrusted data is passed to the application and used as a regular expression. This can cause the thread to overconsume CPU resources.
 Explanation
 There is a vulnerability in implementations of regular expression evaluators and related methods that can cause the thread to hang when evaluating regular expressions that contain a grouping expression that is itself repeated. Additionally, any regular expression that contains alternate subexpressions that overlap one another can also be exploited. This defect can be used to execute a Denial of Service (DoS) attack.
@@ -469,19 +388,7 @@ There are no known regular expression implementations which are immune to this v
 
 
 ## Dynamic Code Evaluation: Code Injection
-•	ABAP
-•	ActionScript
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Interpreting user-controlled instructions at run-time can allow attackers to execute malicious code.
 Explanation
 Many modern programming languages allow dynamic interpretation of source instructions. This capability allows programmers to perform dynamic instructions based on input received from the user. Code injection vulnerabilities occur when the programmer incorrectly assumes that instructions supplied directly from the user will perform only innocent operations, such as performing simple calculations on active user objects or otherwise modifying the user's state. However, without proper validation, a user might specify operations the programmer does not intend.
@@ -508,8 +415,7 @@ The program behaves correctly when the operation parameter is a benign value, su
 
 
 ## Dynamic Code Evaluation: Unsafe Pickle Deserialization
-•	Python
-Abstract
+### Abstract
 Deserializing user-controlled data at run-time can allow attackers to execute arbitrary code.
 Explanation
 Python Official documentation states that:
@@ -528,11 +434,7 @@ Pickle is a powerful serializing library that provides developers with an easy w
 
 
 ## Dynamic Code Evaluation: Unsafe YAML Deserialization
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Python
-Abstract
+### Abstract
 Deserializing user-controlled YAML streams might enable attackers to execute arbitrary code on the server, abuse application logic, and/or lead to denial of service.
 Explanation
 YAML serialization libraries, which convert object graphs into YAML formatted data may include the necessary metadata to reconstruct the objects back from the YAML stream. If attackers can specify the classes of the objects to be reconstructed and are able to force the application to run arbitrary setters with user-controlled data, they may be able to execute arbitrary code during the deserialization of the YAML stream.
@@ -556,22 +458,7 @@ yaml.load(yamlString)
 
 
 ## Header Manipulation
-•	ABAP
-•	ColdFusion
-•	COBOL
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	PLSQL/TSQL
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Including unvalidated data in an HTTP response header can enable cache-poisoning, cross-site scripting, cross-user defacement, page hijacking, cookie manipulation or open redirect.
 Explanation
 Header Manipulation vulnerabilities occur when:
@@ -640,17 +527,7 @@ Open Redirect: Allowing unvalidated input to control the URL used in a redirect 
 
 
 ## Header Manipulation: Cookies
-•	ABAP
-•	ColdFusion
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	PHP
-•	Python
-•	Scala
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Including unvalidated data in an HTTP response header can enable cache-poisoning, cross-site scripting, cross-user defacement, page hijacking, cookie manipulation or open redirect.
 Explanation
 Header Manipulation vulnerabilities occur when:
@@ -712,10 +589,7 @@ Open Redirect: Allowing unvalidated input to control the URL used in a redirect 
 
 
 ## Header Manipulation: SMTP
-•	Java/JSP
-•	PHP
-•	Python
-Abstract
+### Abstract
 Including unvalidated data in an SMTP header can enable attackers to add arbitrary headers, such as CC or BCC that they can use to leak the mail contents to themselves or use the mail server as a spam bot.
 Explanation
 SMTP Header Manipulation vulnerabilities occur when:
@@ -775,11 +649,7 @@ This will effectively allow an attacker to craft spam messages or to send anonym
 
 
 ## HTML5: Cross-Site Scripting Protection
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Python
-Abstract
+### Abstract
 The X-XSS-Protection header is explicitly disabled which may increase the risk of cross-site scripting attacks.
 Explanation
 X-XSS-Protection refers to a header that is automatically enabled in Internet Explorer 8 upwards and the latest versions of Chrome. When the header value is set to false (0) cross-site scripting protection is disabled.
@@ -792,16 +662,7 @@ The header can be set in multiple locations and should be checked for both misco
 
 
 ## JSON Injection
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	PHP
-•	Python
-•	Scala
-•	Swift
-Abstract
+### Abstract
 The method writes unvalidated input into JSON. This call could allow an attacker to inject arbitrary elements or attributes into the JSON entity.
 Explanation
 JSON injection occurs when:
@@ -859,22 +720,7 @@ The JSON file is now tampered with malicious data and the user has a privileged 
 
 
 ## Log Forging
-•	ABAP
-•	ActionScript
-•	ColdFusion
-•	COBOL
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Writing unvalidated user input to log files can allow an attacker to forge log entries or inject malicious content into the logs.
 Explanation
 Log forging vulnerabilities occur when:
@@ -921,13 +767,7 @@ Attempt to log out: name: admin logout: 1                       logout: twenty-o
 
 
 ## Log Forging (debug)
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Python
-•	Ruby
-Abstract
+### Abstract
 Writing unvalidated user input to log files can allow an attacker to forge log entries or inject malicious content into the logs.
 Explanation
 Log forging vulnerabilities occur when:
@@ -978,9 +818,7 @@ Clearly, attackers may use this same mechanism to insert arbitrary log entries.
 
 
 ## Mail Command Injection: SMTP
-•	Java/JSP
-•	Python
-Abstract
+### Abstract
 Executing SMTP commands from an untrusted source can cause the SMTP server to execute malicious commands on behalf of an attacker.
 Explanation
 SMTP command injection vulnerabilities occur when an attacker may influence the commands sent to an SMTP mail server.
@@ -1012,9 +850,7 @@ session.docmd("VRFY", user)
 
 
 ## Memcached Injection
-•	C#/VB.NET/ASP.NET
-•	Python
-Abstract
+### Abstract
 Invoking a Memcached operation with input coming from an untrusted source might allow an attacker to introduce new key/value pairs in Memcached cache.
 Explanation
 Memcached injection errors occur when:
@@ -1068,10 +904,7 @@ The preceding key will successfully add a new key/value pair in the cache inject
 
 
 ## NoSQL Injection: MongoDB
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	Python
-Abstract
+### Abstract
 Constructing a dynamic MongoDB query with input coming from an untrusted source could allow an attacker to modify the statement's meaning.
 Explanation
 NoSQL injection in MongoDB errors occur when:
@@ -1116,19 +949,7 @@ The addition of the || "4" != "5" condition causes the where clause to always ev
 
 
 ## Open Redirect
-•	ABAP
-•	ActionScript
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	Golang
-•	JavaScript/TypeScript
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	PLSQL/TSQL
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Allowing unvalidated input to control the URL used in a redirect can aid phishing attacks.
 Explanation
 Redirects allow web applications to direct users to different pages within the same application or to external sites. Applications utilize redirects to aid in site navigation and, in some cases, to track how users exit the site. Open redirect vulnerabilities occur when a web application redirects clients to any arbitrary URL that can be controlled by an attacker.
@@ -1157,24 +978,7 @@ then even a savvy end-user may be fooled into following the link.
 
 
 ## Path Manipulation
-•	ABAP
-•	ActionScript
-•	ColdFusion
-•	COBOL
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Kotlin
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Allowing user input to control paths used in file system operations could enable an attacker to access or modify otherwise protected system resources.
 Explanation
 Path manipulation errors occur when the following two conditions are met:
@@ -1207,15 +1011,7 @@ print handle
 
 
 ## Path Manipulation: Zip Entry Overwrite
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	Python
-•	Scala
-•	Swift
-Abstract
+### Abstract
 Allowing user input to control paths used in file system operations could enable an attacker to arbitrarily overwrite files on the system.
 Explanation
 Path Manipulation: ZIP Entry Overwrite errors occur when a ZIP file is opened and expanded without checking the file path of the ZIP entry.
@@ -1245,22 +1041,7 @@ def untar(archive_name):
 
 
 ## Resource Injection
-•	ABAP
-•	ColdFusion
-•	COBOL
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	PHP
-•	Python
-•	Scala
-•	PLSQL/TSQL
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Allowing user input to control resource identifiers could enable an attacker to access or modify otherwise protected system resources.
 Explanation
 A resource injection issue occurs when the following two conditions are met:
@@ -1299,16 +1080,7 @@ The kind of resource affected by user input indicates the kind of content that m
 
 
 ## Server-Side Request Forgery
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Kotlin
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-Abstract
+### Abstract
 The application initiates a network connection to a third-party system using user-controlled data to craft the resource URI.
 Explanation
 A Server-Side Request Forgery occurs when an attacker may influence a network connection made by the application server. The network connection will originate from the application server's internal IP address and an attacker will be able to use this connection to bypass network controls and scan or attack internal resources that are not otherwise exposed.
@@ -1350,10 +1122,7 @@ An attacker can leverage this hijacked network connection to perform the followi
 
 
 ## Server-Side Template Injection
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Python
-Abstract
+### Abstract
 User-controlled data is used as a template engine's template, allowing attackers to access the template context and in some cases inject and run arbitrary code on the application server.
 Explanation
 Template engines are used to render content using dynamic data. This context data is normally controlled by the user and formatted by the template to generate web pages, emails, and the like. Template engines allow powerful language expressions to be used in templates in order to render dynamic content, by processing the context data with code constructs such as conditionals, loops, etc. If an attacker can control the template to be rendered, they can inject expressions that expose context data or even run arbitrary commands on the server.
@@ -1401,19 +1170,7 @@ Example 2 uses Django as the template engine. For that engine, an attacker will 
 
 
 ## Setting Manipulation
-•	ColdFusion
-•	COBOL
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	PHP
-•	Python
-•	Scala
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Allowing external control of system settings can disrupt service or cause an application to behave in unexpected ways.
 Explanation
 Setting manipulation vulnerabilities occur when an attacker can control values that govern the behavior of the system, manage specific resources, or in some way affect the functionality of the application.
@@ -1444,23 +1201,7 @@ In general, do not allow user-provided or otherwise untrusted data to control se
 
 
 ## SQL Injection
-•	ABAP
-•	ActionScript
-•	ColdFusion
-•	COBOL
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	PLSQL/TSQL
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 Constructing a dynamic SQL statement with input that comes from an untrusted source might allow an attacker to modify the statement's meaning or to execute arbitrary SQL commands.
 Explanation
 SQL injection errors occur when:
@@ -1556,18 +1297,7 @@ Another solution commonly proposed for dealing with SQL injection attacks is to 
 
 
 ## Unsafe Reflection
-•	ActionScript
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	Swift
-•	VisualBasic/VBScript/ASP
-Abstract
+### Abstract
 An attacker may be able to create unexpected control flow paths through the application, potentially bypassing security checks.
 Explanation
 If an attacker can supply values that the application then uses to determine which class to instantiate or which method to invoke, the potential exists for the attacker to create control flow paths through the application that were not intended by the application developers. This attack vector may allow the attacker to bypass authentication or access control checks or otherwise cause the application to behave in an unexpected manner. Even the ability to control the arguments passed to a given method or constructor may give a wily attacker the edge necessary to mount a successful attack.
@@ -1583,12 +1313,7 @@ References
 
 
 ## XML Entity Expansion Injection
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	PHP
-•	Python
-•	Ruby
-Abstract
+### Abstract
 Using XML parsers configured to not prevent nor limit Document Type Definition (DTD) entity resolution can expose the parser to an XML Entity Expansion injection
 Explanation
 XML Entity Expansion injection also known as XML Bombs are DoS attacks that benefit from valid and well-formed XML blocks that expand exponentially until they exhaust the server allocated resources. XML allows to define custom entities which act as string substitution macros. By nesting recurrent entity resolutions, an attacker may easily crash the server resources.
@@ -1618,15 +1343,7 @@ This test could crash the server by expanding the small XML document into more t
 
 
 ## XML External Entity Injection
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	Objective-C
-•	PHP
-•	Python
-•	Scala
-•	Swift
-Abstract
+### Abstract
 Using XML processors that do not prevent or limit external entities resolution can expose the application to XML External Entities attacks.
 Explanation
 XML External Entities attacks benefit from an XML feature to dynamically build documents at runtime. An XML entity allows inclusion of data dynamically from a given resource. External entities allow an XML document to include data from an external URI. Unless configured to do otherwise, external entities force the XML parser to access the resource specified by the URI, such as a file on the local machine or on a remote system. This behavior exposes the application to XML External Entity (XXE) attacks, which attackers can use to perform denial of service of the local system, gain unauthorized access to files on the local machine, scan remote machines, and perform denial of service of remote systems.
@@ -1650,18 +1367,7 @@ This example could crash the server (on a UNIX system), if the XML parser attemp
 
 
 ## XML Injection
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Golang
-•	Java/JSP
-•	JavaScript/TypeScript
-•	Objective-C
-•	PHP
-•	Python
-•	Ruby
-•	Scala
-•	Swift
-Abstract
+### Abstract
 Writing unvalidated data into an XML document can allow an attacker to change the structure and contents of the XML.
 Explanation
 XML injection occurs when:
@@ -1703,14 +1409,7 @@ When using SAX parsers, the value from the second <price> overrides the value fr
 
 
 ## XPath Injection
-•	ColdFusion
-•	C/C++
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	Objective-C
-•	PHP
-•	Python
-Abstract
+### Abstract
 Constructing a dynamic XPath query with user input could allow an attacker to modify the statement's meaning.
 Explanation
 XPath injection occurs when:
@@ -1751,11 +1450,7 @@ This simplification of the query allows the attacker to bypass the requirement t
 
 
 ## XSLT Injection
-•	C#/VB.NET/ASP.NET
-•	Java/JSP
-•	PHP
-•	Python
-Abstract
+### Abstract
 Processing an unvalidated XSL stylesheet can allow an attacker to change the structure and contents of the resultant XML, include arbitrary files from the file system, or execute arbitrary code.
 Explanation
 XSLT injection occurs when:
